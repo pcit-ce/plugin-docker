@@ -13,4 +13,4 @@ RUN set -x \
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["bash","/docker-entrypoint.sh"]

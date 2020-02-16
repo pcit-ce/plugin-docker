@@ -54,5 +54,9 @@ steps:
   exec_command:
     image: pcit/docker
     run: |
+      docker buildx create --name mybuilder --driver docker-container --use
+
       docker buildx build -f tests/Dockerfile tests
       docker buildx build -t test -f tests/Dockerfile tests
+
+      docker buildx rm mybuilder
